@@ -25,7 +25,7 @@ document.querySelector("#pause").addEventListener("click", function() {
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("slow down Video");
 
-	video.playbackRate *= 0.95;
+	video.playbackRate *= 0.90;
 	console.log(video.playbackRate)
 
 });
@@ -33,7 +33,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up Video");
 
-	video.playbackRate /= 0.95;
+	video.playbackRate /= 0.90;
 	console.log(video.playbackRate)
 });
 
@@ -41,8 +41,8 @@ document.querySelector("#skip").addEventListener("click", function() {
 	console.log("skip");
 	console.log(video.currentTime)
 
-	if((video.currentTime + 15) < video.duration){
-		video.currentTime += 15;
+	if((video.currentTime + 10) < video.duration){
+		video.currentTime += 10;
 	}
 	else{
 		video.currentTime = 0
@@ -67,12 +67,12 @@ document.querySelector("#slider").addEventListener("change", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Muted");
 	console.log(video.muted);
-	if (video.muted == false){
-		video.muted = true
-		this.innerHTML = "Unmuted"}
-	else{
+	if (video.muted == true){
 		video.muted = false
-		this.innerHTML = "Muted"
+		this.innerHTML = "Muted"}
+	else{
+		video.muted = true
+		this.innerHTML = "Unmuted"
 	}
 });
 
